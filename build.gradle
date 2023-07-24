@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.14'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'name.remal.sonarlint' version '3.1.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+println "GradleVersion: ${gradle.gradleVersion}"
+
+java {
+//    sourceCompatibility = '11'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+sourceSets {
+    test {
+        if ('unit' == System.getProperty('mode')) {
+            java.srcDir file('src/test/java')
+            resources.srcDir file('src/test/resources')
+        } else {
+            java.srcDir file('src/test-integration/java')
+            resources.srcDir file('src/test-integration/resources')
+        }
+    }
+}
+
+sonarLint {
+    ignoreFailures = true
+    // it can find
+    //testSourceSets = sourceSets
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
