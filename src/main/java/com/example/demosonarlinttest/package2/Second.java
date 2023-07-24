@@ -1,4 +1,4 @@
-package com.example.demointegrationtest.package2;
+package com.example.demosonarlinttest.package2;
 
 import org.springframework.stereotype.Component;
 

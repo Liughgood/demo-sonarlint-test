@@ -31,22 +31,10 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-sourceSets {
-    test {
-        if ('unit' == System.getProperty('mode')) {
-            java.srcDir file('src/test/java')
-            resources.srcDir file('src/test/resources')
-        } else {
-            java.srcDir file('src/test-integration/java')
-            resources.srcDir file('src/test-integration/resources')
-        }
-    }
-}
-
 sonarLint {
     ignoreFailures = true
-    // it can find
-    //testSourceSets = sourceSets
+    // it can find java:S5785 issue when set sourceSets to testSourceSets
+//    testSourceSets = sourceSets
 }
 
 tasks.named('test') {

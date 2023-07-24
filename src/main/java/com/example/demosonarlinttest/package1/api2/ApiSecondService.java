@@ -1,11 +1,9 @@
-package com.example.demointegrationtest.package1.api;
+package com.example.demosonarlinttest.package1.api2;
 
 import org.springframework.stereotype.Service;
 
 @Service
-public class ApiService {
-
-    @Deprecated
+public class ApiSecondService {
     public String hello(){
         return "Hello";
     }

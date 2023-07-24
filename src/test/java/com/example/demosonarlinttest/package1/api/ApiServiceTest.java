@@ -1,4 +1,4 @@
-package com.example.demointegrationtest.package1;
+package com.example.demosonarlinttest.package1.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,13 +6,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-// java:S5786
 @SpringBootTest
-public class SecondTest {
+class ApiServiceTest {
+
     @Autowired
-    private First first;
+    ApiService apiService;
     @Test
-    public void hello() {
-        assertEquals("hello", first.hello());
+    void hello() {
+        assertEquals("hello", apiService.hello());
     }
 }

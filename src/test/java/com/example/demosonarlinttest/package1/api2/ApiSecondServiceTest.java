@@ -1,4 +1,4 @@
-package com.example.demointegrationtest.package1.api2;
+package com.example.demosonarlinttest.package1.api2;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

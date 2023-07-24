@@ -1,4 +1,4 @@
-package com.example.demointegrationtest;
+package com.example.demosonarlinttest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
